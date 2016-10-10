@@ -1,0 +1,1 @@
+docker build -t pdf_to_text:1 .
