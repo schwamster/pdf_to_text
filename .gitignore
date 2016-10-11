@@ -1,2 +1,6 @@
 /node_modules
 /typings
+/server.js
+/server.js.map
+/utils.js
+/utils.js.map
