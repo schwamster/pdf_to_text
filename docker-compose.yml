@@ -1,0 +1,18 @@
+pdf_to_text:
+    build: .
+    command: nodemon -L --debug=5858
+    volumes:
+        - .:/app
+    ports:
+        - "3000:3000"
+        - "5858:5858"
+    links:
+        - ocr_service
+
+ocr_service:
+    image: ocr_service:1
+    ports: 
+        - "5001:5000"
+    command: host
+    environment:
+        - ComputerVisionKey="${ComputerVisionKey}"

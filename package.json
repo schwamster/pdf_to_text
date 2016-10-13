@@ -11,6 +11,8 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "express": "^4.14.0",
+    "multer": "^1.2.0",
+    "pdf-image": "^1.1.0",
     "pdf-to-text": "0.0.6"
   }
 }

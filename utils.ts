@@ -1,7 +1,6 @@
 var pdfUtil = require('pdf-to-text');
 import * as Promise from "bluebird";
-var pdf_path = "./sample.pdf";
-import fs = require('fs');
+
 const pdfUtilAsync: any = Promise.promisifyAll(pdfUtil); 
 
 
@@ -9,18 +8,19 @@ export module utils{
 
     export class PdfReader{
     
-        getInfo(){
-            pdfUtil.info(pdf_path, function(err, info) {
+        getInfo(path: string){
+            pdfUtil.info(path, function(err, info) {
                 if (err) throw(err);
                 console.log(info);
             });
         }
 
-        getText() : Promise<string>
+        getText(path: string) : Promise<string>
         { 
-            return pdfUtilAsync.pdfToTextAsync(pdf_path).then((result) => 
+            console.log(`start reading '${path}'`);
+            return pdfUtilAsync.pdfToTextAsync(path).then((result) => 
             { 
-                console.log(result);
+                console.log(`done reading '${path}' -> ${result.length} chars`);
                 return result;
 
             });
