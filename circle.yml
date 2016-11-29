@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 6.1.0
+  
+  services:
+    - docker
+
+dependencies:
+  override:
+    - echo "$CIRCLE_TAG"
+    - docker build -t schwamster/pdf_to_text .
+    
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push schwamster/pdf_to_text
