@@ -10,10 +10,6 @@ RUN npm install
 
 COPY . /app
 
-RUN npm install -g nodemon typings
-
-RUN typings install && tsc
-
 EXPOSE 3000
 
 CMD ["node", "./server.js"]

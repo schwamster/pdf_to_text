@@ -4,6 +4,7 @@
   "description": "service that converts pdf to text",
   "main": "server.js",
   "scripts": {
+    "postinstall": "npm install -g nodemon typings && typings install && tsc",
     "test": "karma start --single-run"
   },
   "author": "Bastian Töpfer",
