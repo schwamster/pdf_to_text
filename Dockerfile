@@ -10,9 +10,9 @@ RUN npm install
 
 COPY . /app
 
-RUN npm install -g nodemon
+RUN npm install -g nodemon typings
 
-RUN tsc
+RUN typings install && tsc
 
 EXPOSE 3000
 
