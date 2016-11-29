@@ -6,8 +6,7 @@ RUN mkdir app
 WORKDIR /app
 COPY package.json /app
 
-
-RUN npm install --dev && npm install
+RUN npm install
 
 COPY . /app
 
