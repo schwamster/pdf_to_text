@@ -9,7 +9,6 @@ dependencies:
   override:
     - echo "$CIRCLE_TAG"
     - npm install
-    - npm run postinstall
     - docker build -t schwamster/pdf_to_text .
     
 deployment:
