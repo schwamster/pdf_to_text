@@ -1,6 +1,6 @@
 FROM node:4.6
 
-RUN apt-get update && apt-get -y install imagemagick ghostscript poppler-utils && npm install -g typescript
+RUN apt-get update && apt-get -y install imagemagick ghostscript poppler-utils && npm install -g typescript nodemon
 
 RUN mkdir app
 WORKDIR /app
